@@ -1,0 +1,60 @@
+#! /bin/bash
+pkill polybar
+#!/bin/bash
+#АВТОСТАРТ
+sxhkd &
+#numlockx &
+nitrogen --restore &
+polybar example &
+picom &
+xsetroot -cursor_name left_ptr &
+conky &
+#steam &
+
+#ВОРКСПЕЙСЫ
+bspc monitor -d    󰨞 切   ﭮ
+
+
+
+#РАМКИ И ГАПСЫ
+bspc config border_width         1
+bspc config window_gap          10
+
+bspc config normal_border_color "#11252e"
+bspc config active_border_color "#11252e"
+bspc config focused_border_color "#4abd53"
+
+#ЦВЕТ ПРОСТРАНСТВА ПРИ ВЫБОРЕ ПОЛОЖЕНИЯ НОВОГО ОКНА
+bspc config presel_feedback_color "#4abd53"
+
+
+
+#КОФИЦИЕНТ РАЗДЕЛЕНИЯ, СКОЛЬКО ПРОЦЕНТОВ ОСТАНЕТСЯ ОТ РОДИТЕЛЬСКОГО ОКНА ПРИ ОТКРЫТИИ НОВОГО
+bspc config split_ratio          0.5
+#ФОКУС ОКНА НАВЕДЕНИЕМ КУРСОРА
+bspc config focus_follows_pointer true
+bspc config pointer_modifier	super
+
+#РЕЖИМ МОНОКЛЯ КОГДА ОТКРЫТО ОДНО ОКНО
+bspc config single_monocle	     false
+
+#ОТКЛЮЧЕНИЕ ГАПСОВ РАМОК И ОТСТУПОВ КОГДА ОТКРЫТО ОДНО ОКНО
+bspc config borderless_monocle   false
+bspc config gapless_monocle      false
+bspc config paddingless_monocle	 true
+
+
+#СХЕМЫ СОГЛАСНО КОТОРЫМ БУДУТ ОТКРЫВАТСЯ ОКНА
+#bspc config automatic_scheme	spiral
+
+
+#ПРАВИЛА ОКОН
+bspc rule -a Opera desktop='^1'
+bspc rule -a TelegramDesktop desktop='^5'
+bspc rule -a dmenu rectangle=900x22+610+90
+bspc rule -a Zoom desktop="^6"
+bspc rule -a discord desktop="^7"
+bpsc rule -a steam desktop="^3"
+bspc rule -a FLTK state=floating rectangle=300x100 position=1900
+/usr/lib/notification-daemon-1.0/notification-daemon &
+polybar-msg action "#change_volume.open.0"
