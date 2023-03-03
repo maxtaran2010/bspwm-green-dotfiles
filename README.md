@@ -6,7 +6,7 @@ this is my green bspwm theme.
 run this command:
 
 ```bash
-https://raw.githubusercontent.com/maxtaran2010/bspwm-green-dotfiles/main/install.sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/maxtaran2010/bspwm-green-dotfiles/main/install.sh)"
 ```
 
 ## screenshots
